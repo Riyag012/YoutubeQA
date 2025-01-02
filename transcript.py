@@ -1,7 +1,7 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 from openai import OpenAI
 
-video_id = 'IhBZ5QP5dww&t'
+video_id = '5zuF4Ys1eAw&t'
 transcipt = YouTubeTranscriptApi.get_transcript(video_id)
 # refer to notes(id=1)
 transcript_text = ' '.join([entry['text'] for entry in transcipt])
