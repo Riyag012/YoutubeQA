@@ -1,0 +1,17 @@
+1.
+# return type of transcipt is a dictionary of this format:
+
+[
+    {
+        'start': 0.0,        # Start time of the transcript segment (in seconds)
+        'duration': 5.0,     # Duration of the segment (in seconds)
+        'text': 'Hello, welcome to the video!'  # The actual transcript text for this segment
+    },
+    {
+        'start': 5.0,
+        'duration': 3.0,
+        'text': 'In this video, we will discuss Python programming.'
+    },
+    # ... more segments
+]
+
