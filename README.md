@@ -13,8 +13,7 @@ the YouTube Transcript API for extracting video transcripts and OpenAI's API for
 4. [Usage](#usage)  
 5. [Example](#example)  
 6. [Limitations](#limitations)  
-7. [Future Enhancements](#future-enhancements)  
-8. [License](#license)
+7. [Future Enhancements](#future-enhancements) 
 
 ---
 
