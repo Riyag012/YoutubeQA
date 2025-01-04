@@ -35,7 +35,7 @@ Key Components:
     transcript_text: The extracted text from the YouTube video.
     question: The specific query the user wants answered.
 
-    3.
+3.
     The store=True parameter is used within the client.chat.completions.create() method. This parameter instructs the API to store the generated completion for future reference or analysis.
     Purpose of store=True:
         Data Retention: By setting store=True, the API retains the generated completion. This is useful for auditing, training improvements, or revisiting past interactions.
@@ -47,3 +47,43 @@ Key Components:
         Storage Management: Be mindful of storage limitations and manage stored data appropriately to prevent unnecessary accumulation.
         If you prefer not to store the completion, you can omit the store parameter or set it to False. This will prevent the API from retaining the generated output.
 
+4. 
+    1. What is punkt?
+        punkt is a pre-trained tokenizer model provided by NLTK (Natural Language Toolkit). It is used for dividing a text into sentences (sent_tokenize) or words (word_tokenize). punkt is a machine learning-based sentence tokenizer that can efficiently split text into tokens (words or sentences) even in complex cases.
+        You need to download punkt before using it in your code:
+            python code
+            nltk.download('punkt')
+            This will allow you to use sent_tokenize (for splitting text into sentences) and word_tokenize (for splitting text into words).
+
+    2. What is chunk_size=5000?
+        The chunk_size=5000 refers to characters, not words or tokens. It's the size of the string that will be passed in each chunk of text. The chunk_size is used to divide a long transcript into smaller parts, each containing up to 5000 characters.
+        If you want to work with token-based chunking, you would need to consider the token count rather than character count, since OpenAI models have token limits (for example, GPT-3 has a limit of 4096 tokens).
+
+    3. What is sent_tokenize?
+        sent_tokenize is a function from the nltk.tokenize module. It takes a string of text as input and splits it into a list of sentences. It uses the punkt tokenizer model to do this efficiently. For example:
+
+        python code:
+            from nltk.tokenize import sent_tokenize
+
+            text = "Hello! How are you? I'm fine, thank you."
+            sentences = sent_tokenize(text)
+            print(sentences)
+            Output:
+
+            python
+            Copy code
+            ['Hello!', 'How are you?', "I'm fine, thank you."]
+    4. What is word_tokenize?
+        word_tokenize is another function from the nltk.tokenize module. It splits a sentence into words. It handles punctuation and contractions as separate tokens. For example:
+
+        python code:
+        from nltk.tokenize import word_tokenize
+
+        sentence = "I'm learning Python."
+        words = word_tokenize(sentence)
+        print(words)
+        Output:
+
+        python
+        Copy code
+        ["I", "'m", "learning", "Python", "."]
