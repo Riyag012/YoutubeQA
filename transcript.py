@@ -17,6 +17,7 @@ transcript_text = ' '.join([entry['text'] for entry in transcipt])
 
 # Function to process chunks of text
 def process_text_in_chunks(text, chunk_size=5000):
+    #refer to notes(id4)
     stop_words = set(stopwords.words('english'))
     chunks = [text[i:i+chunk_size] for i in range(0, len(text), chunk_size)]
     
